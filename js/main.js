@@ -162,7 +162,7 @@ function handleDetailClick() {
     const buttons = document.querySelectorAll('.product-navigation>.button');
     buttons.forEach((button) => {
         button.addEventListener('click', (event) => {
-            const idx = event.target.parentNode.parentNode.parentNode.getAttribute('data-id');
+            const idx = event.currentTarget.parentElement.parentElement.getAttribute('data-id');
             const filter = products.filter((product) => product.id === parseInt(idx))[0];
             productContainer.insertAdjacentHTML('beforeend', popUpTemplate(filter.title, filter.subtitle, filter.description, filter.price));
             handleListChoose();
